@@ -11,7 +11,7 @@ interface TokenUsage {
   totalTokens: number;
 }
 
-export async function* getGroqChatCompletion(userMessage: string, modelId: string = "llama-3.3-70b-versatile", imageBase64: string | null = null) {
+export async function* getGroqChatCompletion(userMessage: string, modelId: string = "llama-3.2-90b-vision-preview", imageBase64: string | null = null) {
   const messages = [
     {
       role: "system",
@@ -120,7 +120,7 @@ export async function deleteFile(fileId: string) {
 }
 
 // Example function for streaming with a stop sequence
-export async function getGroqChatStreamWithStop(userMessage: string, modelId: string = "llama-3.3-70b-versatile", stopSequence: string | string[] | null = null) {
+export async function getGroqChatStreamWithStop(userMessage: string, modelId: string = "llama-3.2-90b-vision-preview", stopSequence: string | string[] | null = null) {
   return groq.chat.completions.create({
     messages: [
       {
